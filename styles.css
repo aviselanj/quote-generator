@@ -1,0 +1,15 @@
+section {
+    border-style: outset;
+    border-radius: 60%;
+    padding-top: 5rem;
+    background-color: black;
+    height: 300px;
+    align-content: center;
+}
+
+p {
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+    margin: auto;
+}
