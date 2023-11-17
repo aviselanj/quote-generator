@@ -34,24 +34,18 @@ const quotesArray = [
 
 
 
-const sect = document.querySelector("section");
-const quote = document.createElement("p");
-quote.textContent = quotesArray[0].content;
-sect.appendChild(quote);
-const dash = document.createTextNode(" -")
-const author = document.createTextNode(quotesArray[0].author);
 
-const linkPara = document.querySelector("p");
-linkPara.appendChild(dash)
-linkPara.appendChild(author);
+
 
 function getRandomQuote() {
     let quoteIndex = Math.floor(Math.random() * quotesArray.length);
-    let result;
+    let quoteContent;
+    let quoteAuthor;
     for (let i = 0; i < quotesArray.length - 2; i++) {
-        result = quotesArray[quoteIndex];
+        quoteContent = quotesArray[quoteIndex].content;
+        quoteAuthor = quotesArray[quoteIndex].author;
     }
-    return result
+    return quoteContent + " -" + quoteAuthor;
 }
 function getQuoteAndAuthor() {
     let quote = getRandomQuote();
@@ -62,9 +56,18 @@ function getQuoteAndAuthor() {
 function logQuotesAndAuthor() {
     let result;
     for (let i = 0; i < quotesArray.length; i++) {
-        result = getQuoteAndAuthor();
+        result = getRandomQuote();
     }
-    console.log(result)
+
     return result;
+}
+
+
+function renderQuoteContent(){
+    const sect = document.querySelector("section");
+    const quote = document.createElement("p");
+    quote.textContent = logQuotesAndAuthor();
+    sect.appendChild(quote);
+    logQuotesAndAuthor();
 }
 
