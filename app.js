@@ -30,17 +30,27 @@ const quotesArray = [
         dateAdded: "2020-12-17",
         dateModified: "2023-04-14",
     }
-]
+];
+let quoteIndex = Math.floor(Math.random() * quotesArray.length);
+let quoteContent;
+let quoteAuthor;
+const saveBtnDisplay = document.getElementById("save-btn-display");
+const resultsDisplay = document.getElementById("results");
+let userSave;
+saveBtnDisplay.addEventListener("click", () => {
+    userSave = quoteContent + " -" + quoteAuthor;
+    saveBtnDisplay.innerHTML = userSave
+})
 
-
-
-
-
+function resultsFunc(saveBtnDisplay) {
+    let log = "";
+    if (saveBtnDisplay) {
+        resultsDisplay.innerHTML = `${userSave}`
+    }
+}
 
 function getRandomQuote() {
-    let quoteIndex = Math.floor(Math.random() * quotesArray.length);
-    let quoteContent;
-    let quoteAuthor;
+  
     for (let i = 0; i < quotesArray.length - 2; i++) {
         quoteContent = quotesArray[quoteIndex].content;
         quoteAuthor = quotesArray[quoteIndex].author;
@@ -51,7 +61,7 @@ function getQuoteAndAuthor() {
     let quote = getRandomQuote();
     console.log(quote.content);
     console.log(quote.author);
-}                             
+}
 
 function logQuotesAndAuthor() {
     let result;
@@ -63,7 +73,8 @@ function logQuotesAndAuthor() {
 }
 
 
-function renderQuoteContent(){
+function renderQuoteContent(event) {
+
     const sect = document.querySelector("section");
     const quote = document.createElement("p");
     quote.textContent = logQuotesAndAuthor();
