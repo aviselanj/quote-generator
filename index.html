@@ -13,14 +13,14 @@
 <body>
     <h1 class="display-1">QUOTE GENERATOR</h1>
     <div class="container-fluid">
-        <section>
-
+        <section id="quoteDisplay">
+           
         </section>
-        <button type="button" class="btn btn-outline-secondary" onclick="renderQuoteContent()">Quotes</button>
-        <button id="save-btn-display"type="button" class="btn btn-outline-info" onclick="">Save</button>
-        <div >
-            <div id="results"></div>
-        </div>
+        <button id="quotes" type="button" class="btn btn-outline-secondary" onclick="logQuotesAndAuthor()">Quotes</button>
+        <button id="save-btn-display"type="button" class="btn btn-outline-info">Save</button>
+        
+            <span id="results"></span>
+    
     </div>
 
     <script src="app.js"></script>

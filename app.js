@@ -31,54 +31,26 @@ const quotesArray = [
         dateModified: "2023-04-14",
     }
 ];
+let state = {};
 let quoteIndex = Math.floor(Math.random() * quotesArray.length);
-let quoteContent;
-let quoteAuthor;
-const saveBtnDisplay = document.getElementById("save-btn-display");
-const resultsDisplay = document.getElementById("results");
-let userSave;
-saveBtnDisplay.addEventListener("click", () => {
-    userSave = quoteContent + " -" + quoteAuthor;
-    saveBtnDisplay.innerHTML = userSave
-})
+let quote = document.getElementById("quoteDisplay");
+let saveBtnDisplay = document.getElementById("save-btn-display");
+let resultsDisplay = document.querySelector("span");
+let spn = document.querySelector("span");
+let saveResults = document.createElement("p");
 
-function resultsFunc(saveBtnDisplay) {
-    let log = "";
-    if (saveBtnDisplay) {
-        resultsDisplay.innerHTML = `${userSave}`
-    }
-}
 
-function getRandomQuote() {
-  
-    for (let i = 0; i < quotesArray.length - 2; i++) {
-        quoteContent = quotesArray[quoteIndex].content;
-        quoteAuthor = quotesArray[quoteIndex].author;
-    }
-    return quoteContent + " -" + quoteAuthor;
-}
-function getQuoteAndAuthor() {
-    let quote = getRandomQuote();
-    console.log(quote.content);
-    console.log(quote.author);
-}
+
+
 
 function logQuotesAndAuthor() {
-    let result;
-    for (let i = 0; i < quotesArray.length; i++) {
-        result = getRandomQuote();
-    }
-
-    return result;
+    quoteIndex = Math.floor(Math.random() * quotesArray.length);;
+    quote.innerHTML = quotesArray[quoteIndex].content + " -" + quotesArray[quoteIndex].author;
 }
 
 
-function renderQuoteContent(event) {
-
-    const sect = document.querySelector("section");
-    const quote = document.createElement("p");
-    quote.textContent = logQuotesAndAuthor();
-    sect.appendChild(quote);
-    logQuotesAndAuthor();
-}
+saveBtnDisplay.addEventListener("click", () => {
+    saveResults.innerText = quotesArray[quoteIndex].content + " -" + quotesArray[quoteIndex].author;
+    spn.appendChild(saveResults)
+})
 
