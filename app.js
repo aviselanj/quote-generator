@@ -18,17 +18,17 @@ const logQuotes = async function () {
 let savedQuoteArr = [];
 let result;
 function saveQuotes() {
+    
     if (logQuotes) {
-       savedQuoteArr.push(domElements.quoteResults.innerHTML);
+       savedQuoteArr.unshift(domElements.quoteResults.innerHTML);
     }
     savedQuoteArr.forEach((item) => {
         let li =
             document.createElement("li");
         li.innerText = item;
-        domElements.spn.appendChild(li);
+       result = domElements.spn.appendChild(li);
     });
-   
-
+    savedQuoteArr.pop();
 }
 
 
