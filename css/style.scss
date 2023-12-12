@@ -1,0 +1,31 @@
+$caribbean-current: #006466ff;
+$midnight-green: #065a60ff;
+$midnight-green-2: #0b525bff;
+$midnight-green-3: #144552ff;
+$charcoal: #1b3a4bff;
+$prussian-blue: #212f45ff;
+$space-cadet: #272640ff;
+$dark-purple: #312244ff;
+$dark-purple-2: #3e1f47ff;
+$palatinate: #4d194dff;
+
+html,body{
+    background-color: $charcoal;
+    color: $caribbean-current;
+}
+section {
+    border-style: outset;
+    padding: 5rem;
+    background-color: $midnight-green-3;
+    justify-content: center;
+    align-content: center;
+    border-radius: 100%;
+    text-align: center;
+}
+
+#results {
+    justify-content: center;
+    text-align: center;
+    color: $dark-purple;
+    margin: auto;
+}
