@@ -15,6 +15,8 @@ const logQuotes = async function () {
     console.log(quoted);
     domElements.quoteResults.innerHTML = quoted;
 }
+// stringify quotes
+const strigifyQuote = JSON.stringify(savedQuoteArr);
 // Users action
 // set local storage
 let result;
@@ -33,10 +35,10 @@ const saveQuotes = function () {
         // update to local storage
         localStorage.setItem("quotes", strigifyQuote);
     });
-    savedQuoteArr.pop();
-    
+
 }
 saveBtn.addEventListener("click", saveQuotes);
+
 // get from local storage
 const storedQuote = localStorage.getItem("quotes");
 
@@ -45,6 +47,7 @@ const storedQuote = localStorage.getItem("quotes");
         const parsedQuote = JSON.parse(storedQuote)
         // add all of the items from the parsedCart into the shoppingCart
         parsedQuote.forEach(item => savedQuoteArr.push(item));
+        
     }
 
 
