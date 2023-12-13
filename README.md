@@ -2,7 +2,7 @@
 
 ## Quote Generator
 
-This app generates a new motivational quote with the click of the quote button and saves the user's favorite quotes with the save button to local storage. This is for anyone looking for a bit of inspiration to brighten up thier day.
+This app generates a new motivational quote with the click of the quote button and saves the user's favorite quotes to local storage with the save button. This is for anyone looking for a bit of inspiration to brighten up thier day.
 
 ## Acknowledgements
 
@@ -23,7 +23,8 @@ This app generates a new motivational quote with the click of the quote button a
 #### Get item
 
 ```http
-  GET /api/items/${id}
+  GET https://api.quotable.io
+/authors/{id}
 ```
 
 | Parameter | Type     | Description                       |
