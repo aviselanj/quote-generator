@@ -1,23 +1,32 @@
-html, body {
-  background-color: #1b3a4b;
-  color: #006466;
+body {
+  background-image: linear-gradient(to right, #3a0ca3, #4361ee);
+}
+
+h1 {
+  color: whitesmoke;
 }
 
 section {
   border-style: outset;
   padding: 5rem;
-  background-color: #144552;
+  background-image: linear-gradient(to bottom right, #f72585, #7209b7, #4361ee);
   justify-content: center;
   align-content: center;
   border-radius: 100%;
   text-align: center;
+  color: #4cc9f0;
+  border: 1px, solid, #7209b7;
 }
 
 #results {
   justify-content: center;
-  text-align: center;
-  color: #312244;
+  text-align: justify;
+  color: #f72585;
   margin: auto;
+}
+
+#results li {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

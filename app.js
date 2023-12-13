@@ -20,22 +20,24 @@ const strigifyQuote = JSON.stringify(savedQuoteArr);
 // Users action
 // set local storage
 let result;
-const saveQuotes = function () {
-
+const saveQuotes = function (event) {
+    event.preventDefault();
     if (logQuotes) {
-        savedQuoteArr.unshift(domElements.quoteResults.innerHTML);
-    }
+        savedQuoteArr.push(domElements.quoteResults.innerHTML);
+    
     savedQuoteArr.forEach((item) => {
-        let li =
-            document.createElement("li");
-        li.innerText = item;
-        result = domElements.spn.appendChild(li);
         // stringify quotes
         const strigifyQuote = JSON.stringify(savedQuoteArr);
         // update to local storage
         localStorage.setItem("quotes", strigifyQuote);
+        let li =
+            document.createElement("li");
+        li.innerText = item;
+        result = domElements.spn.appendChild(li);
+       
     });
-
+    return savedQuoteArr.pop()
+}
 }
 saveBtn.addEventListener("click", saveQuotes);
 
