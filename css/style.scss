@@ -1,31 +1,33 @@
-$caribbean-current: #006466ff;
-$midnight-green: #065a60ff;
-$midnight-green-2: #0b525bff;
-$midnight-green-3: #144552ff;
-$charcoal: #1b3a4bff;
-$prussian-blue: #212f45ff;
-$space-cadet: #272640ff;
-$dark-purple: #312244ff;
-$dark-purple-2: #3e1f47ff;
-$palatinate: #4d194dff;
+$rose: #f72585ff;
+$grape: #7209b7ff;
+$zaffre: #3a0ca3ff;
+$neon-blue: #4361eeff;
+$vivid-sky-blue: #4cc9f0ff;
 
-html,body{
-    background-color: $charcoal;
-    color: $caribbean-current;
+body{
+    background-image: linear-gradient(to right,$zaffre, $neon-blue);
+    
+    
+}
+h1{
+    color: whitesmoke;
 }
 section {
     border-style: outset;
     padding: 5rem;
-    background-color: $midnight-green-3;
+    background-image: linear-gradient(to bottom right,$rose, $grape, $neon-blue);
     justify-content: center;
     align-content: center;
     border-radius: 100%;
     text-align: center;
+    color: $vivid-sky-blue;
+    border: 1px,solid,$grape;
 }
 
 #results {
     justify-content: center;
-    text-align: center;
-    color: $dark-purple;
+    text-align:justify;
+    color: $rose;
     margin: auto;
+   
 }
